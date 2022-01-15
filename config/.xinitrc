@@ -54,11 +54,14 @@ if [ -e /usr/bin/mpd ]; then
     mpd "$HOME/.config/mpd/mpd.conf"
 fi
 
-status_bat () {
-    if [ -e /sys/class/power_supply/BAT0/capacity ]; then
+if [ -e /sys/class/power_supply/BAT0/capacity ]; then
+    status_bat () {
         printf "%s%% " "$(cat /sys/class/power_supply/BAT0/capacity)"
-    fi
-}
+    }
+else
+    status_bat () {
+    }
+fi
 
 while :
 do
