@@ -54,10 +54,15 @@ if [ -e /usr/bin/mpd ]; then
     mpd "$HOME/.config/mpd/mpd.conf"
 fi
 
+status_bat () {
+    if [ -e /sys/class/power_supply/BAT0/capacity ]; then
+        printf "%s%% " "$(cat /sys/class/power_supply/BAT0/capacity)"
+    fi
+}
 
 while :
 do
-    xsetroot -name "$(date +'%D %T')"
+    xsetroot -name "$(status_bat)$(date +'%D %T')"
     sleep 1
 done &
 
