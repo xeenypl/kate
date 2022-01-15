@@ -5,7 +5,7 @@ sudo pacman --noconfirm -S libxft libxinerama
 sudo pacman --noconfirm -S xorg-server xorg-xinit xorg-xsetroot
 sudo pacman --noconfirm -S xcape xclip xsel scrot alacritty
 # Fonts.
-sudo pacman --noconfirm -S ttf-dejavu ttf-nerd-fonts-symbols-mono
+sudo pacman --noconfirm -S ttf-dejavu ttf-nerd-fonts-symbols-mono jq
 # Multimedia.
 sudo pacman --noconfirm -S qutebrowser nnn mpv sxiv xwallpaper imagemagick
 # misc tools 
