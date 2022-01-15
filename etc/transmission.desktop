@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Transmission
+GenericName=Torrent Client
+Comment=Downolad torrent
+TryExec=transmission-remote
+Exec=transmission-remote --add -- %U
+Terminal=false
+MimeType=application/x-bittorrent;x-scheme-handler/magnet;
+
