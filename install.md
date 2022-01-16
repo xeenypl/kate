@@ -73,6 +73,13 @@ sudo pacman -S nodejs npm
 sudo npm install -g typescript typescript-language-server
 ```
 
+## Python.
+```sh
+sudo pacman --noconfirm -S python python-pip
+pip install --upgrade --user autopep8
+pip install --upgrade --user python-lsp-server
+```
+
 ## Graphics.
 ```sh
 sudo pacman -S gimp krita inkscape blender
