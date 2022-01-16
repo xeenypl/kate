@@ -124,6 +124,8 @@ lsp.clangd.setup{}
 lsp.hls.setup{}
 lsp.rls.setup{}
 lsp.tsserver.setup{}
+lsp.pylsp.setup{}
+
 
 local set          = vim.opt
 set.tabstop        = 4
