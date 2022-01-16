@@ -5,6 +5,7 @@ export PATH="$PATH:$HOME/.dotnet/tools"
 export PATH="$PATH:$HOME/.nimble/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.cabal/bin"
+export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.ghcup/bin"
 
 export NNN_COLORS='1234'
@@ -52,6 +53,10 @@ fi
 if [ -e /usr/bin/mpd ]; then
     killall mpd
     mpd "$HOME/.config/mpd/mpd.conf"
+fi
+
+if [ -e /usr/bin/dunst ]; then
+    dunst &
 fi
 
 if [ -e /sys/class/power_supply/BAT0/capacity ]; then
