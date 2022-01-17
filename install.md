@@ -80,6 +80,13 @@ pip install --upgrade --user autopep8
 pip install --upgrade --user python-lsp-server
 ```
 
+# Ruby.
+```sh
+sudo pacman -S ruby
+gem install sorbet
+gem install rufo
+```
+
 ## Graphics.
 ```sh
 sudo pacman -S gimp krita inkscape blender

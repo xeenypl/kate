@@ -1,19 +1,24 @@
 #!/bin/sh
+
 export GOPATH="$HOME/.local/go"
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+
+export PATH="$PATH:$GEM_HOME/bin"
 export PATH="$PATH:$GOPATH/bin"
-export PATH="$PATH:$HOME/.dotnet/tools"
-export PATH="$PATH:$HOME/.nimble/bin"
-export PATH="$PATH:$HOME/.cargo/bin"
-export PATH="$PATH:$HOME/.cabal/bin"
-export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/.ghcup/bin"
+export PATH="$PATH:$HOME/.dotnet/tools/"
+export PATH="$PATH:$HOME/.nimble/bin/"
+export PATH="$PATH:$HOME/.cargo/bin/"
+export PATH="$PATH:$HOME/.cabal/bin/"
+export PATH="$PATH:$HOME/.local/bin/"
+export PATH="$PATH:$HOME/.ghcup/bin/"
 
 export NNN_COLORS='1234'
 export NNN_PLUG='i:imgview;d:dragdrop'
 
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config/"
+export XDG_CACHE_HOME="$HOME/.cache/"
+export XDG_DATA_HOME="$HOME/.local/share/"
+export XDG_BIN_HOME="$HOME/.local/bin/"
 
 export GTK_IM_MODULE='fcitx'
 export QT_IM_MODULE='fcitx'

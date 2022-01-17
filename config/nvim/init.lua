@@ -9,6 +9,7 @@ require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     use 'tanvirtin/monokai.nvim'
     use 'sunjon/shade.nvim'
+    use 'norcalli/nvim-colorizer.lua'
     use 'sheerun/vim-polyglot'
     use 'terryma/vim-multiple-cursors'
     use {
@@ -56,10 +57,11 @@ require('packer').startup(function(use)
     end
 end)
 
+require'monokai'.setup {}
+require'colorizer'.setup()
 require'Comment'.setup {}
 require'toggleterm'.setup {}
 require'nvim-tree'.setup {}
-require'monokai'.setup {}
 require'lualine'.setup {}
 require'trouble'.setup {}
 require'todo-comments'.setup {}
@@ -125,6 +127,8 @@ lsp.hls.setup{}
 lsp.rls.setup{}
 lsp.tsserver.setup{}
 lsp.pylsp.setup{}
+lsp.sorbet.setup{}
+
 
 
 local set          = vim.opt
