@@ -129,8 +129,6 @@ lsp.tsserver.setup{}
 lsp.pylsp.setup{}
 lsp.sorbet.setup{}
 
-
-
 local set          = vim.opt
 set.tabstop        = 4
 set.shiftwidth     = 4
@@ -144,6 +142,7 @@ set.textwidth      = 80
 set.smartcase      = true
 set.undofile       = true
 set.undodir        = fn.stdpath('data') .. "/undo/"
+set.clipboard      = "unnamedplus"
 vim.g.mapleader    = " "
 
 local map = vim.api.nvim_set_keymap
