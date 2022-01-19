@@ -1,0 +1,14 @@
+song_columns_list_format = "(15)[red]{a} (80)[white]{t|f:Title}  (5f)[red]{l}"
+
+titles_visibility = "no"
+statusbar_visibility = "no"
+header_visibility = "no"
+
+#progressbar_look = "─╼"
+#progressbar_look = "──"
+progressbar_look = "__"
+
+progressbar_color = "black"
+progressbar_elapsed_color = white
+
+lyrics_directory = ~/.cache/lyrics
