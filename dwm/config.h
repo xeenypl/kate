@@ -1,19 +1,27 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 0;        /* border pixel of windows */
+static const unsigned int gappx     = 5;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10" };
-static const char front[]			= "#fff1f3";
-static const char back[]			= "#26292C";
-static const char sel[]				= "#fd6883";
-
+static const char front[]			= "#ffffff";
+static const char back[]			= "#000000";
+static const char sel[]				= "#fd6666";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { front, back, back },
 	[SchemeSel]  = { sel,   back, sel  },
+};
+
+static const unsigned int baralpha    = 0xf3;
+static const unsigned int borderalpha = OPAQUE;
+static const unsigned int alphas[][3]      = {
+	/*               fg      bg        border     */
+	[SchemeNorm] = { OPAQUE, baralpha, borderalpha },
+	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
 };
 
 /* tagging */
@@ -36,11 +44,175 @@ static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
+void
+tiler(Monitor *m)
+{
+	unsigned int i, n, h, mw, my, ty;
+	Client *c;
+
+	for (n = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), n++);
+	if (n == 0)
+		return;
+
+	if (n > m->nmaster)
+		mw = m->nmaster ? m->ww * m->mfact : 0;
+	else
+		mw = m->ww;
+	for (i = my = ty = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
+		if (i < m->nmaster) {
+			h = (m->wh - my) / (MIN(n, m->nmaster) - i);
+			resize(c, m->wx, m->wy + my, mw - (2*c->bw), h - (2*c->bw), 0);
+			if (my + HEIGHT(c) < m->wh)
+				my += HEIGHT(c);
+		} else {
+			h = (m->wh - ty) / (n - i);
+			resize(c, m->wx + mw, m->wy + ty, m->ww - mw - (2*c->bw), h - (2*c->bw), 0);
+			if (ty + HEIGHT(c) < m->wh)
+				ty += HEIGHT(c);
+		}
+}
+
+void
+tilel(Monitor *m)
+{
+	unsigned int i, n, h, mw, my, ty;
+	Client *c;
+
+	for (n = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), n++);
+	if (n == 0)
+		return;
+
+	if (n > m->nmaster)
+		mw = m->nmaster ? m->ww * m->mfact : 0;
+	else
+		mw = m->ww;
+	for (i = my = ty = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
+		if (i < m->nmaster) {
+			h = (m->wh - my) / (MIN(n, m->nmaster) - i);
+			resize(c, m->wx + m->ww - mw, m->wy + my, mw - (2*c->bw), h - (2*c->bw), 0);
+			if (my + HEIGHT(c) < m->wh)
+				my += HEIGHT(c);
+		} else {
+			h = (m->wh - ty) / (n - i);
+			resize(c, m->wx, m->wy + ty, m->ww - mw - (2*c->bw), h - (2*c->bw), 0);
+			if (ty + HEIGHT(c) < m->wh)
+				ty += HEIGHT(c);
+		}
+}
+
+
+
+void
+centeredmaster(Monitor *m)
+{
+	unsigned int i, n, h, mw, mx, my, oty, ety, tw;
+	Client *c;
+
+	/* count number of clients in the selected monitor */
+	for (n = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), n++);
+	if (n == 0)
+		return;
+
+	/* initialize areas */
+	mw = m->ww;
+	mx = 0;
+	my = 0;
+	tw = mw;
+
+	if (n > m->nmaster) {
+		/* go mfact box in the center if more than nmaster clients */
+		mw = m->nmaster ? m->ww * m->mfact : 0;
+		tw = m->ww - mw;
+
+		if (n - m->nmaster > 1) {
+			/* only one client */
+			mx = (m->ww - mw) / 2;
+			tw = (m->ww - mw) / 2;
+		}
+	}
+
+	oty = 0;
+	ety = 0;
+	for (i = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
+	if (i < m->nmaster) {
+		/* nmaster clients are stacked vertically, in the center
+		 * of the screen */
+		h = (m->wh - my) / (MIN(n, m->nmaster) - i);
+		resize(c, m->wx + mx, m->wy + my, mw - (2*c->bw),
+		       h - (2*c->bw), 0);
+		my += HEIGHT(c);
+	} else {
+		/* stack clients are stacked vertically */
+		if ((i - m->nmaster) % 2 ) {
+			h = (m->wh - ety) / ( (1 + n - i) / 2);
+			resize(c, m->wx, m->wy + ety, tw - (2*c->bw),
+			       h - (2*c->bw), 0);
+			ety += HEIGHT(c);
+		} else {
+			h = (m->wh - oty) / ((1 + n - i) / 2);
+			resize(c, m->wx + mx + mw, m->wy + oty,
+			       tw - (2*c->bw), h - (2*c->bw), 0);
+			oty += HEIGHT(c);
+		}
+	}
+}
+
+void
+centeredfloatingmaster(Monitor *m)
+{
+	unsigned int i, n, w, mh, mw, mx, mxo, my, myo, tx;
+	Client *c;
+
+	/* count number of clients in the selected monitor */
+	for (n = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), n++);
+	if (n == 0)
+		return;
+
+	/* initialize nmaster area */
+	if (n > m->nmaster) {
+		/* go mfact box in the center if more than nmaster clients */
+		if (m->ww > m->wh) {
+			mw = m->nmaster ? m->ww * m->mfact : 0;
+			mh = m->nmaster ? m->wh * 0.9 : 0;
+		} else {
+			mh = m->nmaster ? m->wh * m->mfact : 0;
+			mw = m->nmaster ? m->ww * 0.9 : 0;
+		}
+		mx = mxo = (m->ww - mw) / 2;
+		my = myo = (m->wh - mh) / 2;
+	} else {
+		/* go fullscreen if all clients are in the master area */
+		mh = m->wh;
+		mw = m->ww;
+		mx = mxo = 0;
+		my = myo = 0;
+	}
+
+	for(i = tx = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
+	if (i < m->nmaster) {
+		/* nmaster clients are stacked horizontally, in the center
+		 * of the screen */
+		w = (mw + mxo - mx) / (MIN(n, m->nmaster) - i);
+		resize(c, m->wx + mx, m->wy + my, w - (2*c->bw),
+		       mh - (2*c->bw), 0);
+		mx += WIDTH(c);
+	} else {
+		/* stack clients are stacked horizontally */
+		w = (m->ww - tx) / (n - i);
+		resize(c, m->wx + tx, m->wy, w - (2*c->bw),
+		       m->wh - (2*c->bw), 0);
+		tx += WIDTH(c);
+	}
+}
+
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "S",      tile },    /* first entry is default */
+	{ "R",      tiler },    /* first entry is default */
+	{ "L",      tilel },    /* first entry is default */
 	{ "F",      NULL },    /* no layout function means floating behavior */
 	{ "M",      monocle },
+	{ "|M|",      centeredmaster },
+	{ ">M>",      centeredfloatingmaster },
 	{ NULL,     NULL },
 
 };
