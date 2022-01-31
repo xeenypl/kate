@@ -12,3 +12,6 @@ progressbar_color = "black"
 progressbar_elapsed_color = white
 
 lyrics_directory = ~/.cache/lyrics
+
+execute_on_song_change = notify-send "Now Playing" "$(mpc --format '%artist% - %title%' current)"
+

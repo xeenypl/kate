@@ -156,6 +156,20 @@ config.set('content.javascript.enabled', True, 'chrome://*/*')
 # Type: Bool
 config.set('content.javascript.enabled', True, 'qute://*/*')
 
+# List of user stylesheet filenames to use.
+# Type: List of File, or File
+c.content.user_stylesheets = []
+
+# Directory to save downloads to. If unset, a sensible OS-specific
+# default is used.
+# Type: Directory
+c.downloads.location.directory = '~/'
+
+# Duration (in milliseconds) to wait before removing finished downloads.
+# If set to -1, downloads are never removed.
+# Type: Int
+c.downloads.remove_finished = 100000
+
 # When to show the statusbar.
 # Type: String
 # Valid values:
@@ -163,6 +177,26 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 #   - never: Always hide the statusbar.
 #   - in-mode: Show the statusbar when in modes other than normal mode.
 c.statusbar.show = 'in-mode'
+
+# Position of new tabs opened from another tab. See
+# `tabs.new_position.stacking` for controlling stacking behavior.
+# Type: NewTabPosition
+# Valid values:
+#   - prev: Before the current tab.
+#   - next: After the current tab.
+#   - first: At the beginning.
+#   - last: At the end.
+c.tabs.new_position.related = 'next'
+
+# Position of new tabs which are not opened from another tab. See
+# `tabs.new_position.stacking` for controlling stacking behavior.
+# Type: NewTabPosition
+# Valid values:
+#   - prev: Before the current tab.
+#   - next: After the current tab.
+#   - first: At the beginning.
+#   - last: At the end.
+c.tabs.new_position.unrelated = 'next'
 
 # When to show the tab bar.
 # Type: String
@@ -174,4 +208,7 @@ c.statusbar.show = 'in-mode'
 c.tabs.show = 'switching'
 
 # Bindings for normal mode
+config.unbind('co')
 config.bind('tt', 'config-cycle tabs.show switching always')
+config.bind('y3', 'spawn youtube-dl --extract-audio --audio-format "mp3" {url}')
+config.bind('yd', 'spawn youtube-dl {url}')

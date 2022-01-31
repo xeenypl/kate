@@ -8,8 +8,8 @@ if status is-interactive
     set fish_greeting
 
     alias ls="exa"
-    alias la="exa -al"
-    alias ll="exa -l"
+    alias la="exa -la --git --icons"
+    alias ll="exa -l  --git --icons"
     alias rm="rm -rvi"
     alias cp="cp -rvi"
     alias mv="mv -vi"

@@ -1,5 +1,4 @@
 #!/bin/sh
-
 export GOPATH="$HOME/.local/go"
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 
@@ -11,6 +10,9 @@ export PATH="$PATH:$HOME/.cargo/bin/"
 export PATH="$PATH:$HOME/.cabal/bin/"
 export PATH="$PATH:$HOME/.local/bin/"
 export PATH="$PATH:$HOME/.ghcup/bin/"
+export PATH="$PATH:$HOME/.dotnet/tools/"
+export PATH="$PATH:/nix/var/nix/profiles/default/bin"
+export PATH="$PATH:/opt/gradle/gradle-7.3.3/bin"
 
 export NNN_COLORS='1234'
 export NNN_PLUG='i:imgview;d:dragdrop'
@@ -31,6 +33,7 @@ export SHELL="fish"
 export TERMINAL="alacritty"
 export PAGER="less"
 export DMENU="dmenu"
+export MUSIC="$HOME/storage/music"
 
 export LESSHISTFILE=-
 
@@ -70,6 +73,7 @@ if [ -e /sys/class/power_supply/BAT0/capacity ]; then
     }
 else
     status_bat () {
+        echo ""
     }
 fi
 
@@ -79,4 +83,7 @@ do
     sleep 1
 done &
 
-dwm
+while :
+do
+    dwm
+done
