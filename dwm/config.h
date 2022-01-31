@@ -9,7 +9,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10" };
 static const char front[]			= "#ffffff";
 static const char back[]			= "#000000";
-static const char sel[]				= "#fd6666";
+static const char sel[]				= "#ff0000";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { front, back, back },
