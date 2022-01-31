@@ -24,6 +24,11 @@ cd yay
 makepkg -si
 ```
 
+## Picom.
+```sh
+sudo pacman -S picom
+```
+
 ## Brave (with yay).
 ```sh
 yay -S brave-bin
@@ -103,4 +108,9 @@ sudo pacman -S translate-shell
 ```sh
 yay -S transmission-cli tremc
 sudo cp ./etc/transmission.desktop /usr/share/applications/
+```
+
+## Wine.
+```sh
+sudo pacman -S wine lib32-alsa-plugins lib32-libpulse lib32-openal
 ```
