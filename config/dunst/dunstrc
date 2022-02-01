@@ -20,7 +20,7 @@
     horizontal_padding = 8
     text_icon_padding = 0
     frame_width = 1
-    frame_color = "#fd6883"
+    frame_color = "#ff0000"
     separator_color = frame
     sort = yes
     font = Monospace 10
@@ -56,11 +56,11 @@
 [experimental]
     per_monitor_dpi = false
 [urgency_low]
-    background = "#26292C"
+    background = "#000000"
     foreground = "#888888"
     timeout = 10
 [urgency_normal]
-    background = "#26292C"
+    background = "#000000"
     foreground = "#ffffff"
     timeout = 10
 [urgency_critical]

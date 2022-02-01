@@ -205,9 +205,10 @@ c.tabs.new_position.unrelated = 'next'
 #   - never: Always hide the tab bar.
 #   - multiple: Hide the tab bar if only one tab is open.
 #   - switching: Show the tab bar when switching tabs.
-c.tabs.show = 'switching'
+c.tabs.show = 'always'
 
 # Bindings for normal mode
+config.bind('B', 'config-cycle content.user_stylesheets ~/.config/qutebrowser/style.css ""')
 config.unbind('co')
 config.bind('tt', 'config-cycle tabs.show switching always')
 config.bind('y3', 'spawn youtube-dl --extract-audio --audio-format "mp3" {url}')

@@ -11,8 +11,9 @@ export PATH="$PATH:$HOME/.cabal/bin/"
 export PATH="$PATH:$HOME/.local/bin/"
 export PATH="$PATH:$HOME/.ghcup/bin/"
 export PATH="$PATH:$HOME/.dotnet/tools/"
-export PATH="$PATH:/nix/var/nix/profiles/default/bin"
-export PATH="$PATH:/opt/gradle/gradle-7.3.3/bin"
+export PATH="$PATH:/home/xeeny/.nimble/bin/"
+export PATH="$PATH:/nix/var/nix/profiles/default/bin/"
+export PATH="$PATH:/opt/gradle/gradle-7.3.3/bin/"
 
 export NNN_COLORS='1234'
 export NNN_PLUG='i:imgview;d:dragdrop'
