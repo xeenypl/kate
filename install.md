@@ -114,3 +114,15 @@ sudo cp ./etc/transmission.desktop /usr/share/applications/
 ```sh
 sudo pacman -S wine lib32-alsa-plugins lib32-libpulse lib32-openal
 ```
+
+# Nim (programing language)
+```sh
+curl https://nim-lang.org/choosenim/init.sh -sSf | sh
+nimble install nimlsp
+```
+
+# GLang
+```sh
+sudo pacman -S go
+go install golang.org/x/tools/gopls@latest
+```
