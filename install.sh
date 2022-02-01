@@ -12,5 +12,3 @@ sudo pacman --noconfirm -S qutebrowser nnn mpv sxiv xwallpaper imagemagick
 sudo pacman --noconfirm -S ripgrep fzf exa aria2 fd bat zip unzip unrar jq
 
 sudo pacman --noconfirm -S dunst libnotify
-
-sudo pacman --noconfirm -S python-pip
