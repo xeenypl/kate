@@ -115,14 +115,20 @@ sudo cp ./etc/transmission.desktop /usr/share/applications/
 sudo pacman -S wine lib32-alsa-plugins lib32-libpulse lib32-openal
 ```
 
-# Nim (programing language)
+## Nim (programing language)
 ```sh
 curl https://nim-lang.org/choosenim/init.sh -sSf | sh
 nimble install nimlsp
 ```
 
-# GLang
+## GoLang
 ```sh
 sudo pacman -S go
 go install golang.org/x/tools/gopls@latest
+```
+
+## DotNet
+```sh
+sudo pacman -S dotnet-runtime dotnet-sdk
+dotnet tool install --global csharp-ls
 ```
