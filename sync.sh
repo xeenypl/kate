@@ -19,5 +19,7 @@ sync $HOME/.config/ncmpcpp/config           config/ncmpcpp/config
 sync $HOME/.config/ncmpcpp/bindings         config/ncmpcpp/bindings 
 sync $HOME/.config/picom/picom.conf         config/picom/picom.conf 
 sync $HOME/.config/qutebrowser/config.py    config/qutebrowser/config.py 
+sync $HOME/.config/qutebrowser/style.css    config/qutebrowser/style.css 
+sync $HOME/.config/qutebrowser/style.less   config/qutebrowser/style.less 
 sync $HOME/.config/sxiv/exec/key-handler    config/sxiv/exec/key-handler
 sync $HOME/.xinitrc                         config/.xinitrc 

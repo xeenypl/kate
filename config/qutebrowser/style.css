@@ -1,0 +1,84 @@
+pre,
+body,
+td,
+tr,
+p,
+input,
+textarea {
+  background-color: #000000 !important;
+  color: #fff1f3 !important;
+}
+a {
+  color: #f00000 !important;
+}
+/* Google */
+.gb_na,
+.gb_Rd,
+.gb_Ua,
+.gb_uc,
+.gb_Jd,
+.sfbg,
+.TrMVnc,
+.yg51vc,
+.RNNXgb,
+.WE0UJf {
+  background-color: #000000 !important;
+  /*background-image: none !important;*/
+  color: #fff1f3 !important;
+}
+/* YouTube */
+.style-scope,
+.ytd-masthead,
+.ytd-page-manager,
+.top-level-buttons,
+.ytd-menu-renderer .ytd-watch-flexy {
+  background-color: #000000 !important;
+  /*background-image: none !important;*/
+  color: #fff1f3 !important;
+}
+/* GitHub */
+#repository-container-header,
+.rounded-top-2,
+.header-logged-out,
+.Box-header,
+.Box-row,
+.Box-body {
+  background-color: #000000 !important;
+  /*background-image: none !important;*/
+  color: #fff1f3 !important;
+}
+.Link--primary {
+  color: #f00000 !important;
+}
+/* suckless */
+div#menu,
+div#header {
+  background-color: #000000 !important;
+  /*background-image: none !important;*/
+  color: #fff1f3 !important;
+}
+/* Wikipedia */
+#mw-head,
+#left-navigation,
+#right-navigation,
+.toc,
+.infobox-header,
+#content.mw-body {
+  background-color: #000000 !important;
+  /*background-image: none !important;*/
+  color: #fff1f3 !important;
+}
+/* Nyaa (piracy is eval) */
+.navbar {
+  background-color: #000000 !important;
+  /*background-image: none !important;*/
+  color: #fff1f3 !important;
+}
+/* 4chan */
+.boxbar,
+.boxcontent {
+  background-color: #000000 !important;
+  /*background-image: none !important;*/
+  color: #fff1f3 !important;
+}
+/* duckduckgo */
