@@ -14,7 +14,7 @@
     progress_bar_min_width = 150
     progress_bar_max_width = 300
     indicate_hidden = yes
-    transparency = 1
+    transparency = 0
     separator_height = 2
     padding = 0
     horizontal_padding = 8
@@ -56,11 +56,11 @@
 [experimental]
     per_monitor_dpi = false
 [urgency_low]
-    background = "#000000"
+    background = "#000000f3"
     foreground = "#888888"
     timeout = 10
 [urgency_normal]
-    background = "#000000"
+    background = "#000000f3"
     foreground = "#ffffff"
     timeout = 10
 [urgency_critical]
