@@ -9,6 +9,11 @@ sudo pacman --noconfirm -S ttf-dejavu ttf-nerd-fonts-symbols-mono
 # Multimedia.
 sudo pacman --noconfirm -S qutebrowser nnn mpv sxiv xwallpaper imagemagick
 # misc tools 
-sudo pacman --noconfirm -S ripgrep fzf exa aria2 fd bat zip unzip unrar jq
+sudo pacman --noconfirm -S ripgrep fzf exa aria2 fd bat zip unzip unrar jq man man-pages
 
-sudo pacman --noconfirm -S dunst libnotify
+sudo pacman --noconfirm -S dunst libnotify picom
+
+sudo pacman --noconfirm -S alsa-utils pulseaudio pulseaudio-alsa pulsemixer
+
+sudo pacman --noconfirm -S zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps
+
