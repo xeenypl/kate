@@ -24,11 +24,6 @@ cd yay
 makepkg -si
 ```
 
-## Picom.
-```sh
-sudo pacman -S picom
-```
-
 ## Brave (with yay).
 ```sh
 yay -S brave-bin
@@ -38,16 +33,6 @@ yay -S brave-bin
 ```sh
 sudo pacman -S mpd ncmpcpp mpc
 md /home/xeeny/.cache/mpd/playlists
-```
-
-## Zathura (pdf reader/ebook).
-```sh
-sudo pacman -S zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps
-```
-
-## Pulseaudio.
-```sh
-sudo pacman -S alsa-utils pulseaudio pulseaudio-alsa pulsemixer
 ```
 
 ## Neovim nightly (with yay).
