@@ -71,6 +71,10 @@ if [ -e /usr/bin/dunst ]; then
     dunst &
 fi
 
+if [ -e /usr/bin/picom ]; then
+    picom &
+fi
+
 if [ -e /sys/class/power_supply/BAT0/capacity ]; then
     status_bat () {
         printf "%s%% " "$(cat /sys/class/power_supply/BAT0/capacity)"
