@@ -29,7 +29,7 @@ export XDG_BIN_HOME="$HOME/.local/bin/"
 export GTK_IM_MODULE='fcitx'
 export QT_IM_MODULE='fcitx'
 export SDL_IM_MODULE='fcitx'
-export XMODIFERS='@im=fcitx'
+export XMODIFIERS="@im=fcitx"
 
 export EDITOR="nvim"
 export BROWSER="qutebrowser"
