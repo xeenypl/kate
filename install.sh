@@ -1,4 +1,4 @@
-#!/usr/bin/fish
+#!/usr/bin/env fish
 
 pushd /tmp/
     git clone https://aur.archlinux.org/yay.git
@@ -44,13 +44,28 @@ pushd dmenu
     sudo make install
 popd
 
-cp ./config/*         ~/.config/
-cp ./config/.xinitrc  ~/.xinitrc
-cp ./config/.profile  ~/.profile
-
 # Fish plugins.
 curl -sL https://git.io/fisher | source
 fisher install jorgebucaran/fisher
 fisher install jorgebucaran/hydro
 fisher install jorgebucaran/autopair.fish
 fisher install oh-my-fish/plugin-foreign-env
+
+# Installing configs.
+stow -t $HOME/ home
+
+# I'm doing this to not nead gitinore files line `mpv/watch_later`
+pushd $HOME/.config/
+    mkdir -p alacritty
+    mkdir -p dunst
+    mkdir -p fish
+    mkdir -p mpd
+    mkdir -p mpv
+    mkdir -p ncmpcpp
+    mkdir -p nnn
+    mkdir -p picom
+    mkdir -p qutebrowser
+    mkdir -p sxiv
+popd
+
+stow --target=$HOME/.config/  config/
