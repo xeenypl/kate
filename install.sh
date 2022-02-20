@@ -40,6 +40,10 @@ pushd dmenu
     sudo make install
 popd
 
+cp ./config/*         ~/.config/
+cp ./config/.xinitrc  ~/.xinitrc
+cp ./config/.profile  ~/.profile
+
 # Fish plugins.
 curl -sL https://git.io/fisher | source
 fisher install jorgebucaran/fisher
