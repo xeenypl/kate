@@ -28,6 +28,9 @@ yay --noconfirm -S neovim-nightly-bin
 yay --noconfirm -S brave-bin
 yay --noconfirm -S qutebrowser nnn mpv sxiv xwallpaper imagemagick
 yay --noconfirm -S gimp krita inkscape blender
+# Torretnts.
+yay --noconfirm -S transmission-cli tremc
+sudo cp ./etc/transmission.desktop /usr/share/applications/
 
 pushd dwm
     sudo make install
