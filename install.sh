@@ -13,17 +13,25 @@ yay --noconfirm -S xorg-server xorg-xinit xorg-xsetroot
 yay --noconfirm -S xcape xclip xsel scrot alacritty
 yay --noconfirm -S dunst libnotify picom
 # Fonts.
-sudo pacman --noconfirm -S ttf-dejavu ttf-nerd-fonts-symbols-mono
+yay --noconfirm -S ttf-dejavu ttf-nerd-fonts-symbols-mono
 # Audio
 yay --noconfirm -S alsa-utils pulseaudio pulseaudio-alsa pulsemixer
 # Misc tools 
-sudo pacman --noconfirm -S ripgrep fzf exa aria2 fd bat zip unzip unrar jq man man-pages
+yay --noconfirm -S ripgrep fzf exa aria2 fd bat zip unzip unrar jq man man-pages
 # Pdf reader
 yay --noconfirm -S zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps
 # Multimedia.
 yay --noconfirm -S qutebrowser nnn mpv sxiv xwallpaper imagemagick
 yay --noconfirm -S brave-bin neovim-nightly-bin
 yay --noconfirm -S gimp krita inkscape blender
+
+pushd dwm
+    sudo make install
+popd
+
+pushd dmenu
+    sudo make install
+popd
 
 curl -sL https://git.io/fisher | source
 fisher install jorgebucaran/fisher
