@@ -42,3 +42,4 @@ curl -sL https://git.io/fisher | source
 fisher install jorgebucaran/fisher
 fisher install jorgebucaran/hydro
 fisher install jorgebucaran/autopair.fish
+fisher install oh-my-fish/plugin-foreign-env
