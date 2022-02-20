@@ -5,7 +5,10 @@ if status is-interactive
             exec startx
         end
     end
+
     set fish_greeting
+
+    fenv source ~/.profile
 
     alias ls="exa"
     alias la="exa -la --git --icons"
