@@ -31,6 +31,10 @@ yay --noconfirm -S gimp krita inkscape blender
 # Torretnts.
 yay --noconfirm -S transmission-cli tremc
 sudo cp ./etc/transmission.desktop /usr/share/applications/
+# Japanes Kaybord.
+yay --noconfirm -S adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts
+yay --noconfirn -S fcitx-im fcitx-configtool fcitx-mozc
+yay --noconfirn -S translate-shell
 
 pushd dwm
     sudo make install
