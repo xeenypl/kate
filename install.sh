@@ -16,13 +16,17 @@ yay --noconfirm -S dunst libnotify picom
 yay --noconfirm -S ttf-dejavu ttf-nerd-fonts-symbols-mono
 # Audio
 yay --noconfirm -S alsa-utils pulseaudio pulseaudio-alsa pulsemixer
+yay --noconfirm -S mpd ncmpcpp mpc
+md /home/xeeny/.cache/mpd/playlists
 # Misc tools 
 yay --noconfirm -S ripgrep fzf exa aria2 fd bat zip unzip unrar jq man man-pages
 # Pdf reader
 yay --noconfirm -S zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps
+# Neovim
+yay --noconfirm -S neovim-nightly-bin
 # Multimedia.
+yay --noconfirm -S brave-bin
 yay --noconfirm -S qutebrowser nnn mpv sxiv xwallpaper imagemagick
-yay --noconfirm -S brave-bin neovim-nightly-bin
 yay --noconfirm -S gimp krita inkscape blender
 
 pushd dwm
@@ -33,6 +37,7 @@ pushd dmenu
     sudo make install
 popd
 
+# Fish plugins.
 curl -sL https://git.io/fisher | source
 fisher install jorgebucaran/fisher
 fisher install jorgebucaran/hydro
