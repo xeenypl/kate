@@ -31,7 +31,7 @@ a {
 .ytd-masthead,
 .ytd-page-manager,
 .top-level-buttons,
-.ytd-menu-renderer .ytd-watch-flexy {
+.ytd-menu-renderer .ytd-toggle-button-renderer .style-text .ytd-watch-flexy {
   background-color: #000000 !important;
   /*background-image: none !important;*/
   color: #fff1f3 !important;

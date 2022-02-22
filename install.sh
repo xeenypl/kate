@@ -54,8 +54,6 @@ fisher install jorgebucaran/autopair.fish
 fisher install oh-my-fish/plugin-foreign-env
 
 # Installing configs.
-stow -t $HOME/ home
-
 # I'm doing this to not nead gitinore files line `mpv/watch_later`
 pushd $HOME/.config/
     mkdir -p alacritty
@@ -70,4 +68,4 @@ pushd $HOME/.config/
     mkdir -p sxiv
 popd
 
-stow --target=$HOME/.config/  config/
+stow -t $HOME/ home
