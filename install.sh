@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-sudo pacman -S git base base-devel
+sudo pacman --noconfirm -S git base base-devel
 
 pushd /tmp/
     git clone https://aur.archlinux.org/yay.git
