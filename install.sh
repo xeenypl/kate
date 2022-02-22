@@ -19,7 +19,7 @@ yay --noconfirm -S alsa-utils pulseaudio pulseaudio-alsa pulsemixer
 yay --noconfirm -S mpd ncmpcpp mpc
 mkdir -p /home/xeeny/.cache/mpd/playlists
 # Misc tools 
-yay --noconfirm -S ripgrep fzf exa aria2 fd bat zip unzip unrar jq man man-pages
+yay --noconfirm -S ripgrep fzf exa aria2 fd bat zip unzip unrar jq man man-pages stow
 # Pdf reader
 yay --noconfirm -S zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps
 # Neovim
