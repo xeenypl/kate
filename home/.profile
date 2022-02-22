@@ -1,7 +1,8 @@
 #!/bin/sh
 
 export GOPATH="$HOME/.local/go"
-export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+command -v ruby >> /dev/null &&
+    export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export JAVA_HOME='/usr/lib/jvm/default-runtime/'
 
 export XDG_CONFIG_HOME="$HOME/.config/"
