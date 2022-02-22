@@ -1,9 +1,11 @@
 #!/usr/bin/env fish
 
+sudo pacman -S git base base-devel
+
 pushd /tmp/
     git clone https://aur.archlinux.org/yay.git
     cd yay
-    makepkg -si
+    makepkg -si --noconfirm
 popd
 
 # Libs for dwm.
